@@ -1,3 +1,18 @@
+'''
+This script takes the Parent directory  which contains the images as input 
+scans and finds cksum of the Image and stores  to sqllite db , which comes with python
+You have to create test.db database and following table loggig into sqllite from python before running this script 
+CREATE TABLE imagedata (
+	fullpath text PRIMARY KEY ,
+	imagename text NOT NULL,
+	checksum  bigint,
+	dirlevels smallint,
+	parent char(1),
+	mark_for_del char(1),
+	deleted CHAR(1)
+);
+
+'''
 import pathlib
 import glob
 import sqlite3
